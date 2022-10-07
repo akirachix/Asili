@@ -8,10 +8,11 @@ class Notification(models.Model):
     delivered_on = models.DateTimeField()
     message = models.TextField()
 
-class Customer(models.Model):
-    full_name = models.CharField(max_length=10)
+class User(models.Model):
+    first_name = models.CharField(max_length=10, null = True)
+    last_name = models.CharField(max_length=10, null = True)
+    password = models.CharField(max_length=10) 
     profile = models.ImageField()
-    age = models.IntegerField()
     gender = models.CharField(max_length=10)
     email = models.EmailField()
 
