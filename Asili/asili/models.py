@@ -15,17 +15,17 @@ class Customer(models.Model):
     gender = models.CharField(max_length=10)
     email = models.EmailField()
 
-class Preferences(models.Model):
+class Preference(models.Model):
     design = models.CharField(max_length=10)
     measurement =models.PositiveSmallIntegerField()
     color = models.CharField(max_length=10, blank=True)
     material = models.CharField(max_length=10, blank=True)
-    occasion = models.PositiveSmallIntegerField()
+    # occasion = models.PositiveSmallIntegerField()
 
 class Bodytype(models.Model):
     plus_size = models.ImageField()
     plump = models.ImageField()
-    ptriangle = models.ImageField()
+    triangle = models.ImageField()
 
 class Categories(models.Model):
     new = models.TextField()
