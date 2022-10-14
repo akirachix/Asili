@@ -7,4 +7,3 @@ router.register(r'user',UserViewsets)
 urlpatterns = [
     path('',include(router.urls)),
 ]
-
