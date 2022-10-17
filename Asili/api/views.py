@@ -1,7 +1,29 @@
-from rest_framework import viewsets
-from asili.models import Customer
-from .serializer import CustomerSerializer
+from email import parser
+from django.shortcuts import render
 
-class CustomerViewSet(viewsets.ModelViewSet):
-    queryset = Customer.objects.all()
-    serializer_class = CustomerSerializer
+# Create your views here.
+from rest_framework.parsers import FormParser, MultiPartParser
+from rest_framework import viewsets
+from asili.models import Categories, User, Men, Women, Kids
+from .serializers import UserSerializer, CategoriesSerializer, MenSerializer, WomenSerializer, KidsSerializer
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class CategoriesViewSet(viewsets.ModelViewSet):
+    queryset = Categories.objects.all()
+    serializer_class = CategoriesSerializer
+    parser_classes=(FormParser, MultiPartParser)
+
+class MenViewSet(viewsets.ModelViewSet):
+    queryset = Men.objects.all()
+    serializer_class = MenSerializer
+
+class WomenViewSet(viewsets.ModelViewSet):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
+
+class KidsViewSet(viewsets.ModelViewSet):
+    queryset = Kids.objects.all()
+    serializer_class = KidsSerializer

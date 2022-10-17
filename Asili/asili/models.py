@@ -1,38 +1,39 @@
-from email import message
+from distutils.command.upload import upload
 from django.db import models
 
-class Notification(models.Model):
-    unique_identifier = models.CharField(max_length=10)
-    order_on = models.DateTimeField(auto_now_add=True)
-    received_at = models.DateTimeField(auto_now_add=True)
-    delivered_on = models.DateTimeField()
-    message = models.TextField()
+# Create your models here.
 
-class Customer(models.Model):
-    full_name = models.CharField(max_length=10)
-    profile = models.ImageField()
-    age = models.IntegerField()
-    gender = models.CharField(max_length=10)
+class User(models.Model):
+    first_name = models.CharField(max_length=15)
+    last_name = models.CharField(max_length=15)
     email = models.EmailField()
-
-class Preference(models.Model):
-    design = models.CharField(max_length=10)
-    measurement =models.PositiveSmallIntegerField()
-    color = models.CharField(max_length=10, blank=True)
-    material = models.CharField(max_length=10, blank=True)
-    # occasion = models.PositiveSmallIntegerField()
-
-class Bodytype(models.Model):
-    plus_size = models.ImageField()
-    plump = models.ImageField()
-    triangle = models.ImageField()
+    password = models.CharField(max_length=8)
 
 class Categories(models.Model):
-    new = models.TextField()
-    newarrivals = models.TextField()
-    men = models.TextField()
-    women = models.TextField()
-    kids = models.TextField()
-    mostpopular = models.TextField()
-    prices = models.CharField(max_length=10)
-    brand = models.CharField(max_length=25)
+    new = models.ImageField(upload_to="pictures/")
+    men = models.ImageField(upload_to="pictures/")
+    women = models.ImageField(upload_to="pictures/")
+    kids = models.ImageField(upload_to="pictures/")
+    mostpopular = models.ImageField(upload_to="pictures/")
+    
+
+class Men(models.Model):
+    trousers = models.ImageField()
+    shirts = models.ImageField()
+    jackets = models.ImageField()
+    suits = models.ImageField()
+
+class Women(models.Model):
+    trousers = models.ImageField()
+    shirts = models.ImageField()
+    jackets = models.ImageField()
+    dress = models.ImageField()
+    skirts = models.ImageField()
+
+class Kids(models.Model):
+    trousers = models.ImageField()
+    shirts = models.ImageField()
+    jackets = models.ImageField()
+    dress = models.ImageField()
+    suits = models.ImageField()
+
