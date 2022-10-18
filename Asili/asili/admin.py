@@ -1,33 +1,28 @@
 from django.contrib import admin
-from.models import Bodytype, Categories, Notification, Customer ,Preference , Bodytype, Categories
+from .models import Categories, User, Kids, Men, Women
 
-class NotificationAdmin(admin.ModelAdmin):
-    list_display = ("unique_identifier", "delivered_on")
-    search_fields = ("unique_identifier", "delivered_on")
-
-admin.site.register(Notification, NotificationAdmin)
-
-class CustomerAdmin(admin.ModelAdmin):
-    list_display = ("full_name", "gender", "email",)
-    search_fields = ("full_name", "gender", "email",)
-
-admin.site.register(Customer, CustomerAdmin)
-
-class PreferenceAdmin(admin.ModelAdmin):
-    list_display = ("measurement", "color", "material",  )
-    search_fields = ("measurement", "color", "material", )
-
-admin.site.register(Preference, PreferenceAdmin)
-
-class BodytypeAdmin(admin.ModelAdmin):
-
-    list_display = ("plump", "triangle", "plus_size",)
-    search_fields = ("plump", "triangle", "plus_size",)
-
-admin.site.register(Bodytype, BodytypeAdmin)
+# Register your models here.
+class UserAdmin(admin.ModelAdmin):
+    list_display = ("first_name", "last_name", "email", "password")
+    search_fields = ("first_name", "last_name", "email", "password")
+admin.site.register(User, UserAdmin)
 
 class CategoriesAdmin(admin.ModelAdmin):
-    list_display = ("men", "women", "kids")
-    search_fields = ("men", "women", "kids")
+    list_display = ("new", "men", "women", "kids", "mostpopular" )
+    search_fields = ("new", "men", "women", "kids", "mostpopular")
 admin.site.register(Categories, CategoriesAdmin)
 
+class MenAdmin(admin.ModelAdmin):
+    list_display = ("trousers", "shirts", "jackets", "suits")
+    search_fields = ("trousers", "shirts", "jackets", "suits")
+admin.site.register(Men, MenAdmin)
+
+class WomenAdmin(admin.ModelAdmin):
+    list_display = ("trousers", "shirts", "jackets", "dress", "skirts")
+    search_fields = ("trousers", "shirts", "jackets", "dress", "skirts")
+admin.site.register(Women, WomenAdmin)
+
+class KidsAdmin(admin.ModelAdmin):
+    list_display = ("trousers", "shirts", "jackets", "dress", "suits")
+    search_fields = ("trousers", "shirts", "jackets", "dress", "suits")
+admin.site.register(Kids, KidsAdmin)

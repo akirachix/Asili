@@ -1,21 +1,31 @@
-from calendar import c
-from dataclasses import fields
-from rest_framework import serializers
-from api.models import User
-from django.contrib.auth.models import User
-from .import models
 
-# User Serializer
+from asili.models import User, Categories, Men, Women, Kids
+from rest_framework import serializers
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.User
-        fields = ( 'first_name', 'last_name','email','password')
+        model = User
+        fields = ("first_name", "last_name", "email", "password")
 
-class UserRegisterSerializer(serializers.ModelSerializer):
+class CategoriesSerializer(serializers.ModelSerializer):
     class Meta:
-        models = models.User
-        fields = ('first_name', 'last_name','email','password')
-        extra_kwargs = {'password': {'write_only': True}}
-def create(self, validated_data):
-    user = models.User.objects.create(validated_data['email'],validated_data['password'],)
-    return user
+        model = Categories
+        fields = ("new", "men", "women", "kids", "mostpopular")
+
+        
+
+class MenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Men
+        fields = ("trousers", "shirts", "jackets", "suits")
+
+class WomenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Women
+        fields = ("trousers", "shirts", "jackets", "dress", "skirts")
+    
+class KidsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Kids
+        fields = ("trousers", "shirts", "jackets", "dress", "suits")
+
