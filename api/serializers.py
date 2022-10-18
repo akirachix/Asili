@@ -17,5 +17,5 @@ class CategorySerializer(serializers.ModelSerializer):
 class ClothSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cloth
-        fields = ( 'image', 'type','gender')
+        fields = ( 'id','image', 'type','gender')
 

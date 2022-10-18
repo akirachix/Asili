@@ -22,7 +22,6 @@ class Preferences(models.Model):
     color = models.CharField(max_length=10, blank=True)
     material = models.CharField(max_length=10, blank=True)
     occasion = models.PositiveSmallIntegerField()
-
 class Bodytype(models.Model):
     plus_size = models.ImageField()
     plump = models.ImageField()
@@ -40,9 +39,11 @@ class Category(models.Model):
 
 CLOTH_TYPE_CHOICES = (("Dress","Dress"),("Suits","Suits"), ("Trouser","Trouser"),("Gowns","Gowns"))
 GENDER_CHOICES = (("Men","Men"),("Women","Women"), ("Kids","Kids"))
+OCCASSION_CHOICES = (("Party", "Party"),("Wedding", "Wedding"), ("Casual","Casual"),("Black Tie", "Black Tie"), ("Warm Weather","Warm Weather"), ("Cold Weather","Cold Weather"))
 
 
 class Cloth(models.Model):
     image =  models.ImageField(upload_to='uploads/')
     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True)
     gender = models.CharField(max_length= 10,choices=GENDER_CHOICES, null = True)
+    occassion = models.CharField(max_length= 10,choices=GENDER_CHOICES, null = True)
