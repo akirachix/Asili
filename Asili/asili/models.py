@@ -9,11 +9,7 @@ class User(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=8)
 
-class Designer(models.Model):
-    first_name = models.CharField(max_length=15)
-    last_name = models.CharField(max_length=15)
-    email = models.EmailField()
-    password = models.CharField(max_length=8)
+
 
 class Categories(models.Model):
     new = models.ImageField(upload_to="pictures/")
