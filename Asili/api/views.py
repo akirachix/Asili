@@ -1,3 +1,4 @@
+
 from email import parser
 from lib2to3.pgen2 import token
 # from typing_extensions import Self
@@ -12,15 +13,11 @@ from requests import Response, request
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework import viewsets
 from asili.models import Categories, User, Men, Women, Kids
-from .serializers import DesignerSerializer, UserSerializer, CategoriesSerializer, MenSerializer, WomenSerializer, KidsSerializer
+from .serializers import UserSerializer, CategoriesSerializer, MenSerializer, WomenSerializer, KidsSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-class DesignerViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = DesignerSerializer
 
 class CategoriesViewSet(viewsets.ModelViewSet):
     queryset = Categories.objects.all()
@@ -38,5 +35,3 @@ class WomenViewSet(viewsets.ModelViewSet):
 class KidsViewSet(viewsets.ModelViewSet):
     queryset = Kids.objects.all()
     serializer_class = KidsSerializer
-
-

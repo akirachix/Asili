@@ -1,11 +1,16 @@
 from django.contrib import admin
-from .models import Categories, User, Kids, Men, Women
+from .models import Categories, Designer, User, Kids, Men, Women
 
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name", "email", "password")
     search_fields = ("first_name", "last_name", "email", "password")
 admin.site.register(User, UserAdmin)
+
+class DesignerAdmin(admin.ModelAdmin):
+    list_display = ("first_name", "last_name", "email", "password")
+    search_fields = ("first_name", "last_name", "email", "password")
+admin.site.register(Designer, DesignerAdmin)
 
 class CategoriesAdmin(admin.ModelAdmin):
     list_display = ("new", "men", "women", "kids", "mostpopular" )
