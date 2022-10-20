@@ -21,6 +21,8 @@ class Designer(models.Model):
     email = models.EmailField()
    
 
+
+
 class Categories(models.Model):
     new = models.ImageField(upload_to="pictures/")
     men = models.ImageField(upload_to="pictures/")
