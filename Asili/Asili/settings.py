@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,5 +147,5 @@ MEDIA_URL =  '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # django_heroku.settings(locals())
-
+import django_heroku
 django_heroku.settings(locals())
