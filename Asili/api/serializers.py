@@ -1,5 +1,5 @@
 
-from api.models import  Designer, User, Categories, Men, Women, Kids
+from asili.models import  Designer, User, Categories, Men, Women, Kids
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):
