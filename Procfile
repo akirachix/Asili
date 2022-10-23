@@ -1,1 +1,0 @@
-web: gunicorn Asili.wsgi --log-file -
