@@ -29,7 +29,7 @@ CATEGORY=(("new","new"),("men","men"), ("women","women"),("kids","kids"),("mostp
 WEARER= (("Men","Men"),("Women","Women"), ("Kids","Kids"))
 class Categories(models.Model):
     image =  models.ImageField(upload_to='pictures/')
-    type = models.CharField(max_length= 200,choices=CATEGORY, null = True )
+    type = models.CharField(max_length= 200,choices=CLOTH_TYPE_CHOICES, null = True )
     wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
     def __str__(self):
         return self.wearer
@@ -37,20 +37,20 @@ class Categories(models.Model):
 class Men(models.Model):
    image =  models.ImageField(upload_to='pictures/')
    type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
-   wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
-   def __str__(self):
-    return self.wearer
+#    wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+#    def __str__(self):
+#     return self.wearer
  
 class Women(models.Model):
   image =  models.ImageField(upload_to='pictures/')
   type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
-  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
-  def __str__(self):
-    return self.wearer
+#   wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+#   def __str__(self):
+#     return self.wearer
  
 class Kids(models.Model):
   image =  models.ImageField(upload_to='pictures/')
   type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
-  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
-  def __str__(self):
-    return self.wearer
+#   wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+#   def __str__(self):
+#     return self.wearer
