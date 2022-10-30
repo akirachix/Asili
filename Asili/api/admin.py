@@ -16,6 +16,6 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 class ClothAdmin(admin.ModelAdmin):
     list_display = ("image", "type","gender")
-    search_fields = ("image",)
+    search_fields = ("image","type","gen")
 admin.site.register(Cloth, ClothAdmin)
 # Register your models here.

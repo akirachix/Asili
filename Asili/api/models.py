@@ -1,16 +1,10 @@
-from distutils.command.upload import upload
-from email.policy import default
 from django.db import models
-
-# Create your models here.
-
-class User(models.Model):from django.db import models
-# class Notification(models.Model):
-#     unique_identifier = models.CharField(max_length=10)
-#     order_on = models.DateTimeField(auto_now_add=True)
-#     received_at = models.DateTimeField(auto_now_add=True)
-#     delivered_on = models.DateTimeField()
-#     message = models.TextField()
+class Notification(models.Model):
+    unique_identifier = models.CharField(max_length=10)
+    order_on = models.DateTimeField(auto_now_add=True)
+    received_at = models.DateTimeField(auto_now_add=True)
+    delivered_on = models.DateTimeField()
+    message = models.TextField()
 class User(models.Model):
     first_name = models.CharField(max_length=10, null = True)
     last_name = models.CharField(max_length=10, null = True)
@@ -42,47 +36,6 @@ GENDER_CHOICES = (("Men","Men"),("Women","Women"), ("Kids","Kids"))
 class Cloth(models.Model):
     image =  models.ImageField(upload_to='uploads/')
     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
-    gender = models.CharField(max_length= 10,choices=GENDER_CHOICES, null = True ,default='SOME STRING')
+    gender = models.CharField(max_length= 10,choices=GENDER_CHOICES, null = True)
     def __str__(self):
          return self.gender
-# Create your models here
-  
-
-# class Designer(models.Model):
-
-#     first_name = models.CharField(max_length=10, null = True)
-#     last_name = models.CharField(max_length=10, null = True)
-#     password = models.CharField(max_length=10) 
-#     # profile = models.ImageField()
-#     email = models.EmailField()
-#     # gender = models.CharField(max_length=10)
-
-
-# class Categories(models.Model):
-#     new = models.ImageField(upload_to="pictures/")
-#     men = models.ImageField(upload_to="pictures/")
-#     women = models.ImageField(upload_to="pictures/")
-#     kids = models.ImageField(upload_to="pictures/")
-#     mostpopular = models.ImageField(upload_to="pictures/")
-    
-# class Men(models.Model):
-#     trousers = models.ImageField()
-#     shirts = models.ImageField()
-#     jackets = models.ImageField()
-#     suits = models.ImageField()
-
-# class Women(models.Model):
-#     trousers = models.ImageField()
-#     shirts = models.ImageField()
-#     jackets = models.ImageField()
-#     dress = models.ImageField()
-#     skirts = models.ImageField()
-
-# class Kids(models.Model):
-#     trousers = models.ImageField()
-#     shirts = models.ImageField()
-#     jackets = models.ImageField()
-#     dress = models.ImageField()
-#     suits = models.ImageField()
-
-

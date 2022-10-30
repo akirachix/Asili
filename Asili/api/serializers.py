@@ -1,13 +1,13 @@
-from .models import  Cloth, User, Categories
 from rest_framework import serializers
-
+from .models import  Category, User, Cloth
+# User Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ( 'first_name', 'last_name','email','password')
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Categories
+        model = Category
         fields = ( 'men', 'women','kids')
 class ClothSerializer(serializers.ModelSerializer):
     class Meta:
