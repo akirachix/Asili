@@ -63,8 +63,6 @@ class Designer(models.Model):
     # gender = models.CharField(max_length=10)
 
 
-
-
 class Categories(models.Model):
     new = models.ImageField(upload_to="pictures/")
     men = models.ImageField(upload_to="pictures/")
@@ -72,7 +70,6 @@ class Categories(models.Model):
     kids = models.ImageField(upload_to="pictures/")
     mostpopular = models.ImageField(upload_to="pictures/")
     
-
 class Men(models.Model):
     trousers = models.ImageField()
     shirts = models.ImageField()

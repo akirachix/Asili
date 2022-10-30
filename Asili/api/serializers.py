@@ -1,4 +1,3 @@
-
 from .models import  Cloth, User, Categories
 from rest_framework import serializers
 
