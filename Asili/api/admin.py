@@ -13,21 +13,21 @@ class DesignerAdmin(admin.ModelAdmin):
 admin.site.register(Designer, DesignerAdmin)
  
 class CategoriesAdmin(admin.ModelAdmin):
-   list_display = ("image", "type",  )
-   search_fields = ("image", "type",)
+   list_display = ("image", "type", "wearer", )
+   search_fields = ("image", "type", "wearer",)
 admin.site.register(Categories, CategoriesAdmin)
  
 class MenAdmin(admin.ModelAdmin):
-   list_display = ("image", "type",)
-   search_fields = ("image", "type",)
+   list_display = ("image", "type", "wearer",)
+   search_fields = ("image", "type", "wearer",)
 admin.site.register(Men, MenAdmin)
  
 class WomenAdmin(admin.ModelAdmin):
-    list_display = ("image", "type",)
-    search_fields = ("image", "type", )
+    list_display = ("image", "type", "wearer",)
+    search_fields = ("image", "type", "wearer",)
 admin.site.register(Women, WomenAdmin)
  
 class KidsAdmin(admin.ModelAdmin):
-    list_display = ("image", "type",)
-    search_fields = ("image", "type", )
+    list_display = ("image", "type", "wearer",)
+    search_fields = ("image", "type", "wearer",)
 admin.site.register(Kids, KidsAdmin)
