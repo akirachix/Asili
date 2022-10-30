@@ -11,7 +11,7 @@ from requests import Response, request
 # Create your views here.
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework import viewsets
-from .models import Categories, Designer, User, Men, Women, Kids
+from .models import Categories, Designer, Kids, User, Men, Women
 from .serializers import DesignerSerializer, UserSerializer, CategoriesSerializer, MenSerializer, WomenSerializer, KidsSerializer
  
 class UserViewSet(viewsets.ModelViewSet):
