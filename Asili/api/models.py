@@ -29,7 +29,7 @@ CLOTH_TYPE_CHOICES = (("dress","dress"),("skirts","skirts"), ("trouser","trouser
 WEARER= (("Men","Men"),("Women","Women"), ("Kids","Kids"))
 class Categories(models.Model):
     image =  models.ImageField(upload_to='pictures/')
-    type = models.CharField(max_length= 100,choices=CLOTH_TYPE_CHOICES, null = True )
+    type = models.CharField(max_length= 200,choices=CLOTH_TYPE_CHOICES, null = True )
     wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
     def __str__(self):
         return self.wearer
