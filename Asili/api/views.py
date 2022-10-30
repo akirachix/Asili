@@ -12,7 +12,7 @@ from requests import Response, request
 # Create your views here.
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework import viewsets
-from asili.models import Categories, User, Men, Women, Kids
+from .models import Categories, User, Men, Women, Kids
 from .serializers import UserSerializer, CategoriesSerializer, MenSerializer, WomenSerializer, KidsSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
