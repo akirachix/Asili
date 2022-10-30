@@ -1,55 +1,56 @@
 
-from distutils.command.upload import upload
+from sre_constants import CATEGORY
 from django.db import models
-
+ 
 # Create your models here.
-
+ 
 class User(models.Model):
-
-    first_name = models.CharField(max_length=10, null = True)
-    last_name = models.CharField(max_length=10, null = True)
-    password = models.CharField(max_length=10) 
-    profile = models.ImageField()
-    email = models.EmailField()
-    gender = models.CharField(max_length=10)
-
-class Designer(models.Model):
-    first_name = models.CharField(max_length=10, null = True)
-    last_name = models.CharField(max_length=10, null = True)
-    password = models.CharField(max_length=10) 
-    profile = models.ImageField()
-    gender = models.CharField(max_length=10)
-    email = models.EmailField()
-   
-
-
-
-class Categories(models.Model):
-    new = models.ImageField(upload_to="pictures/")
-    men = models.ImageField(upload_to="pictures/")
-    women = models.ImageField(upload_to="pictures/")
-    kids = models.ImageField(upload_to="pictures/")
-    mostpopular = models.ImageField(upload_to="pictures/")
     
-
+   first_name = models.CharField(max_length=10, null = True)
+   last_name = models.CharField(max_length=10, null = True)
+   password = models.CharField(max_length=10)
+   profile = models.ImageField()
+   email = models.EmailField()
+   gender = models.CharField(max_length=10)
+ 
+ 
+class Designer(models.Model):
+   first_name = models.CharField(max_length=10, null = True)
+   last_name = models.CharField(max_length=10, null = True)
+   password = models.CharField(max_length=10)
+   profile = models.ImageField()
+   gender = models.CharField(max_length=10)
+   email = models.EmailField()
+ 
+ 
+ 
+CLOTH_TYPE_CHOICES = (("dress","dress"),("skirts","skirts"), ("trouser","trouser"),("shirts","shirts"))
+CATEGORY=(("new","new"),("men","men"), ("women","women"),("kids","kids"),("mostpopular","mostpopular"))
+WEARER= (("Men","Men"),("Women","Women"), ("Kids","Kids"))
+class Categories(models.Model):
+    image =  models.ImageField(upload_to='pictures/')
+    type = models.CharField(max_length= 200,choices=CATEGORY, null = True )
+    wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+    def __str__(self):
+        return self.wearer
+ 
 class Men(models.Model):
-    trousers = models.ImageField(upload_to="pictures/")
-    shirts = models.ImageField(upload_to="pictures/")
-    jackets = models.ImageField(upload_to="pictures/")
-    suits = models.ImageField(upload_to="pictures/")
-
+   image =  models.ImageField(upload_to='pictures/')
+   type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
+   wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+   def __str__(self):
+    return self.wearer
+ 
 class Women(models.Model):
-    trousers = models.ImageField(upload_to="pictures/")
-    shirts = models.ImageField(upload_to="pictures/")
-    jackets = models.ImageField(upload_to="pictures/")
-    dress = models.ImageField(upload_to="pictures/")
-    skirts = models.ImageField(upload_to="pictures/")
-
+  image =  models.ImageField(upload_to='pictures/')
+  type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
+  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+  def __str__(self):
+    return self.wearer
+ 
 class Kids(models.Model):
-    trousers = models.ImageField(upload_to="pictures/")
-    shirts = models.ImageField(upload_to="pictures/")
-    jackets = models.ImageField(upload_to="pictures/")
-    dress = models.ImageField(upload_to="pictures/")
-    suits = models.ImageField(upload_to="pictures/")
-
-
+  image =  models.ImageField(upload_to='pictures/')
+  type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
+  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+  def __str__(self):
+    return self.wearer
