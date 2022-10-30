@@ -11,9 +11,9 @@ router = routers.DefaultRouter()
 router.register(r'User',UserViewSet)
 router.register(r'Designer',DesignerViewSet)
 router.register(r'Category',CategoryViewSets)
-# router.register(r'Women',WomenViewSet)
-# router.register(r'Men',MenViewSet)
-# router.register(r'Kids',KidsViewSet)
+router.register(r'Women',WomenViewSet)
+router.register(r'Men',MenViewSet)
+router.register(r'Kids',KidsViewSet)
 
 urlpatterns = [
     path('',include(router.urls)),
