@@ -17,23 +17,23 @@ class DesignerSerializer(serializers.ModelSerializer):
 class CategoriesSerializer(serializers.ModelSerializer):
    class Meta:
        model = Categories
-       fields = ("image", "type", "wearer",)
+       fields = ("image", "type","wearer")
  
       
  
 class MenSerializer(serializers.ModelSerializer):
    class Meta:
        model = Men
-       fields = ("image", "type", "wearer",)
+       fields = ("image", "type")
  
 class WomenSerializer(serializers.ModelSerializer):
    class Meta:
        model = Women
-       fields = ("image", "type", "wearer",)
+       fields = ("image", "type")
   
 class KidsSerializer(serializers.ModelSerializer):
    class Meta:
        model = Kids
-       fields = ("image", "type", "wearer",)
+       fields = ("image", "type")
  
  
