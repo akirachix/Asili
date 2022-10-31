@@ -5,35 +5,35 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
    class Meta:
        model = User
-       fields = ("first_name", "last_name", "email", "password")
+       fields = ("id","first_name", "last_name", "email", "password")
 
 
 class DesignerSerializer(serializers.ModelSerializer):
    class Meta:
        model = Designer
-       fields = ("first_name", "last_name", "email", "password")
+       fields = ("id","first_name", "last_name", "email", "password")
  
  
 class CategoriesSerializer(serializers.ModelSerializer):
    class Meta:
        model = Categories
-       fields = ("image", "type", "wearer")
+       fields = ("id","image", "type", "wearer")
  
       
  
 class MenSerializer(serializers.ModelSerializer):
    class Meta:
        model = Men
-       fields = ("image", "type")
+       fields = ("id","image", "type")
  
 class WomenSerializer(serializers.ModelSerializer):
    class Meta:
        model = Women
-       fields = ("image", "type")
+       fields = ("id","image", "type")
   
 class KidsSerializer(serializers.ModelSerializer):
    class Meta:
        model = Kids
-       fields = ("image", "type")
+       fields = ("id","image", "type")
  
  
