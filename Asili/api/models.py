@@ -24,12 +24,12 @@ CLOTH_TYPE_CHOICES = (("skirts","skirts"),("dress","dress"), ("trouser","trouser
 # CATEGORY=(("men","men"), ("women","women"),("kids","kids"),("mostpopular","mostpopular"))
 WEARER= (("Men","Men"),("Women","Women"), ("Kids","Kids"))
 
-class Categories(models.Model):
-    image =  models.ImageField(upload_to='pictures/')
-    type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
-    wearer = models.CharField(max_length= 100,choices=WEARER, null = True ,default='SOME STRING')
-    def __str__(self):
-        return self.wearer
+# class Categories(models.Model):
+#     image =  models.ImageField(upload_to='pictures/')
+#     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
+#     wearer = models.CharField(max_length= 100,choices=WEARER, null = True ,default='SOME STRING')
+#     def __str__(self):
+#         return self.wearer
  
 class Men(models.Model):
     image =  models.ImageField(upload_to='pictures/')
