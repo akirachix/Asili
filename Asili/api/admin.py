@@ -28,6 +28,6 @@ class WomenAdmin(admin.ModelAdmin):
 admin.site.register(Women, WomenAdmin)
  
 class KidsAdmin(admin.ModelAdmin):
-    list_display = ("image", "type", )
-    search_fields = ("image", "type",)
+    list_display = ("id","image", "type", )
+    search_fields = ("id","image", "type",)
 admin.site.register(Kids, KidsAdmin)

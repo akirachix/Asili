@@ -24,7 +24,7 @@ class Designer(models.Model):
  
  
  
-CLOTH_TYPE_CHOICES = (("dress","dress"), ("trouser","trouser"),("shirts","shirts"))
+CLOTH_TYPE_CHOICES = (("skirts","skirts"),("dress","dress"), ("trouser","trouser"),("shirts","shirts"))
 # CATEGORY=(("men","men"), ("women","women"),("kids","kids"),("mostpopular","mostpopular"))
 WEARER= (("Men","Men"),("Women","Women"), ("Kids","Kids"))
 
