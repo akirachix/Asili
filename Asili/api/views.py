@@ -11,8 +11,8 @@ from requests import Response, request
 # Create your views here.
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework import viewsets
-from .models import  Designer, Kids, User, Men, Women
-from .serializers import DesignerSerializer, UserSerializer, MenSerializer, WomenSerializer, KidsSerializer
+from .models import Categories, Designer, Kids, User, Men, Women
+from .serializers import DesignerSerializer, UserSerializer, CategoriesSerializer, MenSerializer, WomenSerializer, KidsSerializer
  
 class UserViewSet(viewsets.ModelViewSet):
    queryset = User.objects.all()
@@ -22,9 +22,9 @@ class DesignerViewSet(viewsets.ModelViewSet):
    queryset = Designer.objects.all()
    serializer_class = DesignerSerializer
  
-# class CategoryViewSets(viewsets.ModelViewSet):
-#    queryset = Categories.objects.all()
-#    serializer_class = CategoriesSerializer
+class CategoryViewSets(viewsets.ModelViewSet):
+   queryset = Categories.objects.all()
+   serializer_class = CategoriesSerializer
  
 class MenViewSet(viewsets.ModelViewSet):
    queryset = Men.objects.all()

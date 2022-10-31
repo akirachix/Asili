@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Designer, User, Kids, Men, Women
+from .models import Categories, Designer, User, Kids, Men, Women
  
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
@@ -12,10 +12,10 @@ class DesignerAdmin(admin.ModelAdmin):
    search_fields = ("first_name", "last_name", "email", "password")
 admin.site.register(Designer, DesignerAdmin)
  
-# class CategoriesAdmin(admin.ModelAdmin):
-#    list_display = ("image", "type", "wearer")
-#    search_fields = ("image", "type","wearer" )
-# admin.site.register(Categories, CategoriesAdmin)
+class CategoriesAdmin(admin.ModelAdmin):
+   list_display = ("image", "type", "wearer")
+   search_fields = ("image", "type","wearer" )
+admin.site.register(Categories, CategoriesAdmin)
  
 class MenAdmin(admin.ModelAdmin):
    list_display = ("image", "type",)

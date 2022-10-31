@@ -1,5 +1,5 @@
  
-from .models import  Designer, User, Men, Women, Kids
+from .models import  Designer, User, Categories, Men, Women, Kids
 from rest_framework import serializers
  
 class UserSerializer(serializers.ModelSerializer):
@@ -14,10 +14,10 @@ class DesignerSerializer(serializers.ModelSerializer):
        fields = ("first_name", "last_name", "email", "password")
  
  
-# class CategoriesSerializer(serializers.ModelSerializer):
-#    class Meta:
-#        model = Categories
-#        fields = ("image", "type", "wearer")
+class CategoriesSerializer(serializers.ModelSerializer):
+   class Meta:
+       model = Categories
+       fields = ("image", "type", "wearer")
  
       
  
