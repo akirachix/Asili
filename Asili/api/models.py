@@ -9,17 +9,13 @@ class User(models.Model):
    first_name = models.CharField(max_length=10, null = True)
    last_name = models.CharField(max_length=10, null = True)
    password = models.CharField(max_length=10)
-   profile = models.ImageField()
    email = models.EmailField()
-   gender = models.CharField(max_length=10)
  
  
 class Designer(models.Model):
    first_name = models.CharField(max_length=10, null = True)
    last_name = models.CharField(max_length=10, null = True)
    password = models.CharField(max_length=10)
-   profile = models.ImageField()
-   gender = models.CharField(max_length=10)
    email = models.EmailField()
  
  
