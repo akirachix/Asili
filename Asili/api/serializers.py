@@ -17,7 +17,7 @@ class DesignerSerializer(serializers.ModelSerializer):
 class CategoriesSerializer(serializers.ModelSerializer):
    class Meta:
        model = Categories
-       fields = ("image", "type","wearer")
+       fields = ("image", "type", "wearer")
  
       
  
