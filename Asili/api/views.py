@@ -6,8 +6,6 @@ from django.shortcuts import render
 from django.views import View
 from requests import Response, request
  
- 
- 
 # Create your views here.
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework import viewsets
