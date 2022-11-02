@@ -15,6 +15,12 @@ from pathlib import Path
 import dj_database_url
 import django_heroku
 import cloudinary
+cloudinary.config( 
+  cloud_name = "sample", 
+  api_key = "874837483274837", 
+  api_secret = "a676b67565c6767a6767d6767f676fe1",
+)
+
 import cloudinary.uploader
 import cloudinary.api
 
@@ -91,12 +97,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Asili.wsgi.application'
 
-cloudinary.config( 
-  cloud_name = "sample", 
-  api_key = "874837483274837", 
-  api_secret = "a676b67565c6767a6767d6767f676fe1",
-  secure = true
-)
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
