@@ -1,9 +1,15 @@
 
 from sre_constants import CATEGORY
 from django.db import models
- 
+# from cloudinary.models import CloudinaryField
+
 # Create your models here.
- 
+
+
+# class Photo(models.Model):
+#   image = CloudinaryField('image')
+
+
 class User(models.Model):
     
    first_name = models.CharField(max_length=10, null = True)

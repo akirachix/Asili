@@ -1,0 +1,29 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Photos</title>
+</head>
+<body>
+    {% load cloudinary %}
+{% load url from future %}
+
+{% load cloudinary %}      
+{% cloudinary photo.image format="jpg" width=120 height=80 crop="fill" %}
+
+{% block body %}
+  <div id='backend_upload'>
+    <form action="{% url "photo_album.views.upload" %}" method="post"
+          enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ backend_form }}
+      <input type="submit" value="Upload">
+    </form>
+  </div>  
+{% endblock %}
+
+<form method="post" enctype="multipart/form-data">
+</body>
+</html> -->
