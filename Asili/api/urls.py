@@ -1,5 +1,5 @@
 from django.urls import path,include
-# from api.views import imageView, upload
+from api.views import imageView, upload
 from rest_framework import routers
 from .views import  UserViewSet,DesignerViewSet,CategoryViewSets,WomenViewSet,MenViewSet,KidsViewSet
 from django.conf import settings
