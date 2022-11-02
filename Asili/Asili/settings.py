@@ -14,6 +14,9 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 
@@ -47,7 +50,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'whitenoise.runserver_nostatic',
     'corsheaders',
-    
+    'cloudinary',
 
 ]
 
@@ -88,7 +91,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Asili.wsgi.application'
 
-
+cloudinary.config( 
+  cloud_name = "sample", 
+  api_key = "874837483274837", 
+  api_secret = "a676b67565c6767a6767d6767f676fe1",
+  secure = true
+)
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -158,7 +166,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Default primary key field type
