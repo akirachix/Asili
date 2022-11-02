@@ -66,7 +66,7 @@ MIDDLEWARE = [
     
 
 ]
-# ALLOWED_HOSTS = ['192.168.0.101', 'localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['192.168.0.101', 'localhost', '127.0.0.1', '[::1]']
 
 ROOT_URLCONF = 'Asili.urls'
 
