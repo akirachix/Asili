@@ -1,8 +1,5 @@
 from django.urls import path,include
 # from api.views import imageView, upload
-from django.contrib import admin
-from django.urls import path
-from api import views
 from rest_framework import routers
 from .views import  UserViewSet,DesignerViewSet,CategoryViewSets,WomenViewSet,MenViewSet,KidsViewSet
 from django.conf import settings
@@ -18,8 +15,6 @@ router.register(r'Women',WomenViewSet)
 router.register(r'Men',MenViewSet)
 router.register(r'Kids',KidsViewSet)
 
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('',include(router.urls)),
 ]
