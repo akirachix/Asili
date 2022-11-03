@@ -10,7 +10,6 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
-import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
