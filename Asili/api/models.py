@@ -1,7 +1,7 @@
 
 from sre_constants import CATEGORY
 from django.db import models
-from cloudinary.models import CloudinaryField
+from .models import CloudinaryField
 
 
 
