@@ -45,8 +45,8 @@ class Women(models.Model):
         return self.image
         
 class Kids(models.Model):
-    image =  models.ImageField(upload_to='pictures/')
-    type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
-   #  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
-    def __str__(self):
-        return self.image
+  image =  models.ImageField(upload_to='pictures/')
+  type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
+  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
+  def __str__(self):
+    return self.wearer
