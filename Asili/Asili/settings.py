@@ -10,15 +10,15 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
-# cloudinary.config( 
-#   cloud_name = "dg8d1digi", 
-#   api_key = "844831737131679", 
-#   api_secret = "GYr8ob12OPaGByDiRMG38O8VhOM" 
-# )
+cloudinary.config( 
+  cloud_name = "dg8d1digi", 
+  api_key = "844831737131679", 
+  api_secret = "GYr8ob12OPaGByDiRMG38O8VhOM" 
+)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
