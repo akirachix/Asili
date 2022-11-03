@@ -1,11 +1,8 @@
-
 from sre_constants import CATEGORY
 from django.db import models
-from .models import CloudinaryField
-
-
-
-
+ 
+# Create your models here.
+ 
 class User(models.Model):
     
    first_name = models.CharField(max_length=10, null = True)
@@ -27,28 +24,28 @@ CLOTH_TYPE_CHOICES = (("skirts","skirts"),("dress","dress"), ("trouser","trouser
 WEARER= (("Men","Men"),("Women","Women"), ("Kids","Kids"))
 
 class Categories(models.Model):
-    image =  CloudinaryField('pictures')
+    image =  models.ImageField(upload_to='pictures/')
     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
     wearer = models.CharField(max_length= 100,choices=WEARER, null = True ,default='SOME STRING')
     def __str__(self):
         return self.wearer
  
 class Men(models.Model):
-    image = CloudinaryField('pictures')
+    image =  models.ImageField(upload_to='pictures/')
     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
    #  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
     def __str__(self):
         return self.image
  
 class Women(models.Model):
-    image =  CloudinaryField('pictures')
+    image =  models.ImageField(upload_to='pictures/')
     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
    #  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
     def __str__(self):
         return self.image
         
 class Kids(models.Model):
-    image =CloudinaryField('pictures')
+    image =  models.ImageField(upload_to='pictures/')
     type = models.CharField(max_length= 10,choices=CLOTH_TYPE_CHOICES, null = True )
    #  wearer = models.CharField(max_length= 10,choices=WEARER, null = True ,default='SOME STRING')
     def __str__(self):

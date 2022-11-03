@@ -14,10 +14,6 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
 
 
 
@@ -50,9 +46,6 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'whitenoise.runserver_nostatic',
-    'corsheaders',
-    'cloudinary',
-
 ]
 
 
@@ -65,12 +58,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-
-    
-
 ]
-ALLOWED_HOSTS = ['192.168.0.101', 'localhost', '127.0.0.1', '[::1]']
+# ALLOWED_HOSTS = ['192.168.0.101', 'localhost', '127.0.0.1', '[::1]']
 
 ROOT_URLCONF = 'Asili.urls'
 
@@ -92,6 +81,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Asili.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -110,8 +100,8 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fashion',
-        'USER': 'fashionuser',
+        'NAME': 'asili',
+        'USER': 'asiliuser',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -155,14 +145,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-ALLOWED_HOSTS = ["rocky-falls-15187.herokuapp.com"]
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'mediafiles')
-MEDIA_URL = "/media/"
+STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Default primary key field type
@@ -174,10 +166,3 @@ COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # django_heroku.settings(locals())
 django_heroku.settings(locals())
-
-
-cloudinary.config(
-  cloud_name = "dg8d1digi",
-  api_key = "844831737131679",
-  api_secret = "GYr8ob12OPaGByDiRMG38O8VhOM",
-) 
