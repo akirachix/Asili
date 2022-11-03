@@ -14,11 +14,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-cloudinary.config( 
-  cloud_name = "dg8d1digi", 
-  api_key = "844831737131679", 
-  api_secret = "GYr8ob12OPaGByDiRMG38O8VhOM" 
-)
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,7 +38,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'whitenoise.runserver_nostatic',
-    'cloudinary'
+    'cloudinary',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -142,3 +138,10 @@ COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # django_heroku.settings(locals())
 django_heroku.settings(locals())
+
+
+cloudinary.config( 
+  cloud_name = "dg8d1digi", 
+  api_key = "844831737131679", 
+  api_secret = "GYr8ob12OPaGByDiRMG38O8VhOM" 
+)
