@@ -13,6 +13,7 @@ from django.urls import path
 from django.conf import settings
 from django import views
 
+
  
 schema_view = get_schema_view(
   openapi.Info(

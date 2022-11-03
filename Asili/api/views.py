@@ -1,10 +1,9 @@
 from email import parser
 from lib2to3.pgen2 import token
-# from typing_extensions import Self
 from django.conf import settings
-from django.shortcuts import render
-from django.views import View
-from requests import Response, request
+
+
+
  
 # Create your views here.
 from rest_framework.parsers import FormParser, MultiPartParser
