@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
+import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
@@ -135,12 +136,12 @@ COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# django_heroku.settings(locals())
-django_heroku.settings(locals())
-
 
 cloudinary.config( 
   cloud_name = "dg8d1digi", 
   api_key = "844831737131679", 
   api_secret = "GYr8ob12OPaGByDiRMG38O8VhOM" 
 )
+# django_heroku.settings(locals())
+django_heroku.settings(locals())
+
