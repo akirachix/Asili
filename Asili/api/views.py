@@ -18,10 +18,10 @@ class UserViewSet(viewsets.ModelViewSet):
 
    def register_customer(request):
       if request.method == "POST":
-         serializer = UserSerializer(data=request.data)
-         if serializer.is_valid():
-            serializer.save()
-         return Response(serializer.data, status=201)   
+         serializers= UserSerializer(data=request.data)
+         if serializers.is_valid():
+            serializers.save()
+         return Response(serializers.data, status=201)   
 
 class DesignerViewSet(viewsets.ModelViewSet):
    queryset = Designer.objects.all()
