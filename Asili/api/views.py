@@ -16,27 +16,23 @@ class UserViewSet(viewsets.ModelViewSet):
    queryset = User.objects.all()
    serializer_class = UserSerializer
 
-   def register_user(request):
-      if request.method == 'POST':
-         form =  User(request.POST)
-         if form.is_valid():
-            form.save()
-         else:
-            form = User()
-      return render(request, "api/register_customer.html", {"form": form})
+   def register_customer(request):
+      if request.method == "POST":
+         serializer = UserSerializer(data=request.data)
+         if serializer.is_valid():
+            serializer.save()
+         return Response(serializer.data, status=201)   
 
 class DesignerViewSet(viewsets.ModelViewSet):
    queryset = Designer.objects.all()
    serializer_class = DesignerSerializer
 
-   def register_Designer(request):
-      if request.method == 'POST':
-         form =  Designer(request.POST)
-         if form.is_valid():
-            form.save()
-         else:
-            form = Designer()
-      return render(request, "api/register_customer.html", {"form": form})
+   def register_customer(request):
+      if request.method == "POST":
+         serializer = UserSerializer(data=request.data)
+         if serializer.is_valid():
+            serializer.save()
+         return Response(serializer.data, status=201)  
  
 class CategoryViewSets(viewsets.ModelViewSet):
    queryset = Categories.objects.all()
