@@ -16,7 +16,7 @@ class UserViewSet(viewsets.ModelViewSet):
    queryset = User.objects.all()
    serializer_class = UserSerializer
 
-   def register_customer(request):
+   def register_user(request):
       if request.method == 'POST':
          form =  User(request.POST)
          if form.is_valid():
