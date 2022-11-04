@@ -9,6 +9,7 @@ class User(models.Model):
    first_name = models.CharField(max_length=10, null = True)
    last_name = models.CharField(max_length=10, null = True)
    password = models.CharField(max_length=10)
+   confirmPassword=models.CharField(max_length=10)
    email = models.EmailField()
  
  

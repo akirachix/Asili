@@ -3,8 +3,8 @@ from .models import Categories, Designer, User, Kids, Men, Women
  
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
-   list_display = ("first_name", "last_name", "email", "password")
-   search_fields = ("first_name", "last_name", "email", "password")
+   list_display = ("first_name", "last_name", "email", "password","confirmPassword")
+   search_fields = ("first_name", "last_name", "email", "password","confirmPassword")
 admin.site.register(User, UserAdmin)
  
 class DesignerAdmin(admin.ModelAdmin):
