@@ -29,7 +29,7 @@ class DesignerViewSet(viewsets.ModelViewSet):
 
    def register_customer(request):
       if request.method == "POST":
-         serializer = UserSerializer(data=request.data)
+         serializer = DesignerSerializer(data=request.data)
          if serializer.is_valid():
             serializer.save()
          return Response(serializer.data, status=201)  
